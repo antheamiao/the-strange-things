@@ -1,0 +1,43 @@
+using System;
+using System.Collections.Generic;
+
+class Rocker
+{
+    public string Name { get; set; }
+    public string Band { get; set; }
+    public string Role { get; set; }
+    public int YearBorn { get; set; }
+
+    public Rocker(string name, string band, string role, int yearBorn)
+    {
+        Name = name;
+        Band = band;
+        Role = role;
+        YearBorn = yearBorn;
+    }
+
+    public void PrintInfo()
+    {
+        Console.WriteLine($"{Name}, born {YearBorn}, is the {Role} of {Band}.");
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        List<Rocker> rockers = new List<Rocker>
+        {
+            new Rocker("David Gilmour", "Pink Floyd", "guitarist and vocalist", 1946),
+            new Rocker("Dimebag Darrell", "Pantera", "guitarist", 1966),
+            new Rocker("Till Lindemann", "Rammstein", "vocalist", 1963),
+            new Rocker("Slash", "Guns N' Roses", "guitarist", 1965)
+        };
+
+        Console.WriteLine("Famous Rockers:");
+        foreach (var rocker in rockers)
+        {
+            rocker.PrintInfo();
+        }
+    }
+}
